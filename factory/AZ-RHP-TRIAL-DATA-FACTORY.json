@@ -1,0 +1,9 @@
+{
+	"name": "AZ-RHP-TRIAL-DATA-FACTORY",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cee4ae93-5216-4db8-beaf-b6520b0fd049",
+		"tenantId": "b5c82f41-77eb-47ac-843c-7d84f6e5c6e7"
+	}
+}
