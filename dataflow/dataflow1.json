@@ -21,10 +21,18 @@
 					"name": "emplyee"
 				},
 				{
+					"dataset": {
+						"referenceName": "employeedeptdataset",
+						"type": "DatasetReference"
+					},
 					"name": "department"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          id as integer,",
@@ -36,6 +44,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> fetchemployee",
+				"fetchemployee aggregate() ~> aggregate1",
 				"fetchemployee sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -52,10 +61,21 @@
 				"          name,",
 				"          salary",
 				"     )) ~> emplyee",
-				"fetchemployee sink(allowSchemaDrift: true,",
+				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          id as string,",
+				"          name as string,",
+				"          salary as string,",
+				"          deptid as string,",
+				"          deptname as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> department"
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          deptid,",
+				"          deptname",
+				"     )) ~> department"
 			]
 		}
 	}
