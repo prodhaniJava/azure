@@ -18,7 +18,10 @@
 						"referenceName": "employeedeptdataset",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "emplyee"
+				},
+				{
+					"name": "department"
 				}
 			],
 			"transformations": [],
@@ -48,7 +51,11 @@
 				"          id,",
 				"          name,",
 				"          salary",
-				"     )) ~> sink1"
+				"     )) ~> emplyee",
+				"fetchemployee sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> department"
 			]
 		}
 	}
