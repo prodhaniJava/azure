@@ -75,7 +75,7 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
 				"          deptid,",
-				"          deptname",
+				"          deptname = deptName",
 				"     )) ~> department"
 			]
 		}
