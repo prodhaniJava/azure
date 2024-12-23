@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "AZ-RHP-TRIAL-DATA-FACTORY"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureMySql1_connectionString": {
+			"value": ""
+		},
+		"azrhpemplyeeblob_connectionString": {
+			"value": ""
+		},
+		"emplyeecsvblob_connectionString": {
+			"value": ""
+		},
+		"lsemployeecsvblob_connectionString": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
